@@ -18,30 +18,33 @@ describe('User sign up with Simpsons API', () => {
       .post('/api/v1/profiles')
       .send({ name: 'simpsons fan' });
 
-    console.log(testProfile.body);
+    
     expect(testProfile.body).toEqual({
       id: expect.any(String),
       name: 'simpsons fan',
       quote: expect.any(String),
       character: expect.any(String),
+      image: expect.any(String),
     });
   });
 
   it('returns all user profiles', async () => {
     const allUsers = await request(app).get('/api/v1/profiles');
-    console.log(allUsers.body);
+    
     expect(allUsers.body).toEqual([
       {
         id: expect.any(String),
         name: 'Lisa',
         quote: expect.any(String),
         character: expect.any(String),
+        image: expect.any(String),
       },
       {
         id: expect.any(String),
         name: 'Bart',
         quote: expect.any(String),
         character: expect.any(String),
+        image: expect.any(String),
       },
     ]);
   });
@@ -53,6 +56,7 @@ describe('User sign up with Simpsons API', () => {
         name: expect.any(String),
         quote: expect.any(String),
         character: expect.any(String),
+        image: expect.any(String),
       },
     ]);
   });
@@ -66,6 +70,7 @@ describe('User sign up with Simpsons API', () => {
       name: 'Maggie',
       quote: expect.any(String),
       character: expect.any(String),
+      image: expect.any(String),
     });
   });
 
@@ -78,6 +83,7 @@ describe('User sign up with Simpsons API', () => {
       name: 'Lisa',
       quote: expect.any(String),
       character: expect.any(String),
+      image: expect.any(String),
     }]);
 
     const nothing = await request(app).get('/api/v1/profiles/1');

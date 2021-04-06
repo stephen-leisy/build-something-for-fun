@@ -4,5 +4,6 @@ CREATE TABLE profiles (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     name TEXT NOT NULL,
     quote TEXT NOT NULL,
-    character TEXT NOT NULL
+    character TEXT NOT NULL,
+    image TEXT NOT NULL
 );
